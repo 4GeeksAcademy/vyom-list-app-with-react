@@ -1,33 +1,36 @@
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Context } from '../store/appContext'
 
+
 const EditContact = () => {
-    const {store, actions} = useContext(Context)
+    const { store, actions } = useContext(Context)
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         const { fullName, email, numberPhone, address } = e.target;
-        
+
         const newDates = {
             name: fullName.value,
             numberPhone: numberPhone.value,
             email: email.value,
             address: address.value
         };
-                
+
         actions.contactEdit(store.cardSelectEdit, newDates);
-        
+
         fullName.value = ''
         email.value = ''
         numberPhone.value = ''
         address.value = ''
+        navigate('/')
         console.log(store.cardSelectEdit);
-    }; 
+    };
 
 
-    
+
     return (
         <div className='w-75 mx-auto'>
             <h1 className='text-center'>Editar Contacto</h1>

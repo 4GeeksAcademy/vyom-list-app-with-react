@@ -1,10 +1,13 @@
 import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Context } from '../store/appContext'
 
+
+
 const ContactForm = () => {
-    const {store, actions} = useContext(Context)
+    const { store, actions } = useContext(Context)
     const [newContact, setNewContact] = useState({})
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,14 +27,15 @@ const ContactForm = () => {
         email.value = ''
         numberPhone.value = ''
         address.value = ''
+        navigate("/")
         console.log(newContact)
     }
 
- 
+
 
     return (
         <div className='w-75 mx-auto'>
-            
+
             <h1 className='text-center'>Crear nuevo contacto</h1>
             <form className='d-flex flex-column gap-3' onSubmit={handleSubmit}>
                 <div className='d-flex flex-column gap-2' >
@@ -51,7 +55,7 @@ const ContactForm = () => {
                     <input placeholder='Direccion...' id='address' required autoComplete='off'></input>
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <button className='btn btn-primary fw-bold'>Crear contacto</button>
+                        <button className='btn btn-primary fw-bold'>Crear contacto</button>
                 </div>
             </form>
             <Link to="/">

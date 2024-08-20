@@ -23,11 +23,11 @@ const CardContact = ({ contact }) => {
             <div className=''>
                 <Link to='/EditContact'>
                     <button onClick={() => actions.setCardEditId(contact.id)} className='btn text-success fw-bold'>
-                        <i class='bx bx-edit-alt text-success fs-4' ></i>
+                        <i className='bx bx-edit-alt text-success fs-4' ></i>
                     </button>
                 </Link>
-                <button onClick={() => actions.contactDelete(contact.id)} className='btn text-danger fw-bold'>
-                    <i class='bx bxs-trash text-danger fs-4'></i>
+                <button onClick={() => {actions.setCardEditId(contact.id), actions.openModal()}} className='btn text-danger fw-bold'>
+                    <i className='bx bxs-trash text-danger fs-4'></i>
                 </button>
             </div>
         </li>

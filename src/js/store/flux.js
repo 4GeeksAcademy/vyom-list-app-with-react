@@ -14,7 +14,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			agendaList: [],
-			cardSelectEdit: 0
+			cardSelectEdit: 0,
+			modalValue: false
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -128,6 +129,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			setCardEditId: (id) =>{
 				setStore({cardSelectEdit: id})
+			},
+			openModal: () => {
+				setStore({modalValue:true})
+			},
+			closeModal: () => {
+				setStore({modalValue:false})
 			}
 		}
 	};
