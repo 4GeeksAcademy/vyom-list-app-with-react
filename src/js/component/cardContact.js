@@ -9,15 +9,15 @@ const CardContact = ({ contact }) => {
 
     return (
         <li className='list-group-item p-4 d-flex justify-content-between'>
-            <div className='d-flex gap-4'>
+            <div className='d-flex gap-4 flex-wrap justify-content-center'>
                 <div className='rounded-circle' style={{ height: '150px', width: '150px', background: 'whitesmoke' }}>
                     <img className='rounded-circle  w-100 h-100' src='https://picsum.photos/id/237/200/300' style={{ objectFit: 'cover' }}></img>
                 </div>
-                <div className='text-secondary'>
+                <div className='text-secondary' style={{width: '240px'}}>
                     <h4 className='m-0'>{contact.name}</h4>
-                    <p className='m-0'>{contact.address}</p>
-                    <p className='m-0'>{contact.phone}</p>
-                    <p className='m-0'>{contact.email}</p>
+                    <p className='m-0 d-flex align-items-center gap-1'><span className='d-flex align-items-center fs-5'><i class='bx bx-current-location' ></i></span>{contact.address}</p>
+                    <p className='m-0 d-flex align-items-center gap-1'><span className='d-flex align-items-center fs-4'><i class='bx bxs-phone' ></i></span>{contact.phone}</p>
+                    <p className='m-0 d-flex align-items-center gap-1'><span className='d-flex align-items-center fs-5'><i class='bx bxs-envelope'></i></span> {contact.email}</p>
                 </div>
             </div>
             <div className=''>
