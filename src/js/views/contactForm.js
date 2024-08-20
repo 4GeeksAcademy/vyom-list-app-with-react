@@ -18,10 +18,13 @@ const ContactForm = () => {
         newContact.address = address.value
         const dataContact = newContact
 
-        setNewContact(dataContact);
+        // setNewContact(dataContact);
         actions.createContact(newContact)
+        fullName.value = ''
+        email.value = ''
+        numberPhone.value = ''
+        address.value = ''
         console.log(newContact)
-        
     }
 
  

@@ -19,7 +19,10 @@ const EditContact = () => {
                 
         actions.contactEdit(store.cardSelectEdit, newDates);
         
-        console.log(newDates);
+        fullName.value = ''
+        email.value = ''
+        numberPhone.value = ''
+        address.value = ''
         console.log(store.cardSelectEdit);
     }; 
 
